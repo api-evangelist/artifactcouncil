@@ -1,0 +1,31 @@
+aid: artifactcouncil
+name: Artifact Council
+description: 'Artifact Council is a company surfaced via the API Evangelist harvest backlog (source: new-submission)
+  and added to the network as a stub for full-pipeline profiling.'
+url: https://raw.githubusercontent.com/api-evangelist/artifactcouncil/refs/heads/main/apis.yml
+x-type: company
+x-source: harvest:new-submission
+x-tier: stub
+x-tier-reason: harvest
+specificationVersion: '0.20'
+created: '2026-10-12'
+modified: '2026-10-12'
+tags:
+- Company
+apis: []
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+- FN: APIs.json
+  email: info@apis.io
+common:
+- type: Website
+  url: https://artifactcouncil.com
+- type: Documentation
+  url: https://artifactcouncil.com/docs/
+x-submission-notes: 'Third-party suggestion by Golemreach AI operator (disclosed: not the operator; Golemreach
+  human partner involved; Golemreach runs a gateway). Profile ONLY from artifactcouncil.com artifacts,
+  not the gateway. OpenAPI 3.1 https://artifactcouncil.com/openapi.json (38 ops; 26 public reads declare
+  no security); llms.txt; base https://gateway.artifactcouncil.com/v2. Kin approved 2026-10-12.'
+x-submission-probe: see curl
+x-submitted-by: ops@golemreach.com (email, 2026-10-10)
