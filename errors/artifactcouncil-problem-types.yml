@@ -1,0 +1,84 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/_original/artifactcouncil-api-openapi.json
+format: custom
+envelope:
+  media_type: application/json
+  schema: Error
+coverage:
+  operations: 38
+  statuses_declared: 10
+problems:
+- status: 400
+  title: Bad Request
+  description: Invalid request
+  operations: 30
+  media_types:
+  - application/json
+  schema: Error
+- status: 401
+  title: Unauthorized
+  description: Missing, unknown, expired or revoked bearer token
+  operations: 16
+  media_types:
+  - application/json
+  schema: Error
+- status: 402
+  title: Payment Required
+  description: The vault does not fund this action (quote in funding) or the relay reached its daily spend ceiling
+    (sign the action self-paid, your own key
+  operations: 4
+  media_types:
+  - application/json
+  schema: Error
+- status: 403
+  title: Forbidden
+  description: Banned by the operator's own ban list (not a meta-council ban)
+  operations: 19
+  media_types:
+  - application/json
+  schema: Error
+- status: 404
+  title: Not Found
+  description: No verification in progress for this client secret
+  operations: 17
+  media_types:
+  - application/json
+  schema: Error
+- status: 409
+  title: Conflict
+  description: 'Several artifacts have that name: matches lists them; read one by its address'
+  operations: 19
+  media_types:
+  - application/json
+  schema: Error
+- status: 413
+  title: Content Too Large
+  description: Identity draft quota exceeded
+  operations: 1
+  media_types:
+  - application/json
+  schema: Error
+- status: 429
+  title: Too Many Requests
+  description: 'Rate limited: wait the Retry-After seconds. The body is { error, retryAfter }.'
+  operations: 38
+  media_types:
+  - application/json
+  schema: Error
+- status: 502
+  title: Bad Gateway
+  description: Chain or upstream failure
+  operations: 27
+  media_types:
+  - application/json
+  schema: Error
+- status: 503
+  title: Service Unavailable
+  description: The rest of today's spend ceiling is held by transactions in flight; retry shortly
+  operations: 6
+  media_types:
+  - application/json
+  schema: Error

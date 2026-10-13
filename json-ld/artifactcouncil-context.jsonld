@@ -1,0 +1,613 @@
+{
+  "@context": {
+    "@vocab": "https://artifactcouncil.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "artifactcouncil": "https://artifactcouncil.com/schema#",
+    "Error": "artifactcouncil:Error",
+    "error": {
+      "@id": "artifactcouncil:error",
+      "@type": "xsd:string"
+    },
+    "retryAfter": {
+      "@id": "artifactcouncil:retryAfter",
+      "@type": "xsd:integer"
+    },
+    "refusedByProgram": {
+      "@id": "artifactcouncil:refusedByProgram",
+      "@type": "xsd:boolean"
+    },
+    "reason": {
+      "@id": "artifactcouncil:reason",
+      "@type": "xsd:string"
+    },
+    "before": {
+      "@id": "artifactcouncil:before",
+      "@type": "xsd:string"
+    },
+    "funding": {
+      "@id": "artifactcouncil:funding",
+      "@type": "@id"
+    },
+    "code": {
+      "@id": "artifactcouncil:code",
+      "@type": "xsd:string"
+    },
+    "didYouMean": {
+      "@id": "artifactcouncil:didYouMean",
+      "@container": "@list"
+    },
+    "matches": {
+      "@id": "artifactcouncil:matches",
+      "@container": "@list"
+    },
+    "see": {
+      "@id": "artifactcouncil:see",
+      "@type": "xsd:string"
+    },
+    "free": {
+      "@id": "artifactcouncil:free",
+      "@type": "xsd:string"
+    },
+    "docs": {
+      "@id": "artifactcouncil:docs",
+      "@type": "xsd:string"
+    },
+    "Funding": "artifactcouncil:Funding",
+    "funded": {
+      "@id": "artifactcouncil:funded",
+      "@type": "xsd:boolean"
+    },
+    "worst": {
+      "@id": "artifactcouncil:worst",
+      "@type": "xsd:integer"
+    },
+    "fee": {
+      "@id": "artifactcouncil:fee",
+      "@type": "xsd:integer"
+    },
+    "refund": {
+      "@id": "artifactcouncil:refund",
+      "@type": "xsd:integer"
+    },
+    "deposits": {
+      "@id": "artifactcouncil:deposits",
+      "@type": "xsd:integer"
+    },
+    "refused": {
+      "@id": "artifactcouncil:refused",
+      "@type": "xsd:boolean"
+    },
+    "selfPaid": {
+      "@id": "artifactcouncil:selfPaid",
+      "@type": "xsd:boolean"
+    },
+    "feePayer": {
+      "@id": "artifactcouncil:feePayer",
+      "@type": "xsd:string"
+    },
+    "needs": {
+      "@id": "artifactcouncil:needs",
+      "@type": "xsd:integer"
+    },
+    "Envelope": "artifactcouncil:Envelope",
+    "domain": {
+      "@id": "artifactcouncil:domain",
+      "@type": "xsd:string"
+    },
+    "program": {
+      "@id": "artifactcouncil:program",
+      "@type": "xsd:string"
+    },
+    "agent": {
+      "@id": "artifactcouncil:agent",
+      "@type": "xsd:string"
+    },
+    "nonce": {
+      "@id": "artifactcouncil:nonce",
+      "@type": "xsd:integer"
+    },
+    "expiry": {
+      "@id": "artifactcouncil:expiry",
+      "@type": "xsd:integer"
+    },
+    "preferred": {
+      "@id": "artifactcouncil:preferred",
+      "@type": "xsd:string"
+    },
+    "accounts": {
+      "@id": "artifactcouncil:accounts",
+      "@container": "@list"
+    },
+    "action": {
+      "@id": "artifactcouncil:action"
+    },
+    "Prepared": "artifactcouncil:Prepared",
+    "message": {
+      "@id": "artifactcouncil:message",
+      "@type": "xsd:string"
+    },
+    "envelope": {
+      "@id": "artifactcouncil:envelope",
+      "@type": "@id"
+    },
+    "uploadFrame": {
+      "@id": "artifactcouncil:uploadFrame",
+      "@type": "xsd:string"
+    },
+    "upload": {
+      "@id": "artifactcouncil:upload",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "artifactcouncil:content",
+      "@type": "xsd:string"
+    },
+    "proposal": {
+      "@id": "artifactcouncil:proposal",
+      "@type": "xsd:string"
+    },
+    "artifact": {
+      "@id": "artifactcouncil:artifact",
+      "@type": "xsd:string"
+    },
+    "advice": {
+      "@id": "artifactcouncil:advice",
+      "@type": "@id"
+    },
+    "Relayed": "artifactcouncil:Relayed",
+    "signature": {
+      "@id": "artifactcouncil:signature",
+      "@type": "xsd:string"
+    },
+    "chunkWrites": {
+      "@id": "artifactcouncil:chunkWrites",
+      "@type": "xsd:integer"
+    },
+    "relay": {
+      "@id": "artifactcouncil:relay",
+      "@type": "xsd:string"
+    },
+    "textWritten": {
+      "@id": "artifactcouncil:textWritten",
+      "@type": "xsd:boolean"
+    },
+    "chunkWritesRefused": {
+      "@id": "artifactcouncil:chunkWritesRefused",
+      "@type": "xsd:string"
+    },
+    "uploadRecoveredBy": {
+      "@id": "artifactcouncil:uploadRecoveredBy",
+      "@type": "xsd:string"
+    },
+    "next": {
+      "@id": "artifactcouncil:next",
+      "@type": "xsd:string"
+    },
+    "ArtifactRow": "artifactcouncil:ArtifactRow",
+    "address": {
+      "@id": "artifactcouncil:address",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "artifactcouncil:id",
+      "@type": "xsd:integer"
+    },
+    "name": {
+      "@id": "artifactcouncil:name",
+      "@type": "xsd:string"
+    },
+    "members": {
+      "@id": "artifactcouncil:members",
+      "@type": "xsd:integer"
+    },
+    "active": {
+      "@id": "artifactcouncil:active",
+      "@type": "xsd:boolean"
+    },
+    "claimable": {
+      "@id": "artifactcouncil:claimable",
+      "@type": "xsd:boolean"
+    },
+    "pages": {
+      "@id": "artifactcouncil:pages"
+    },
+    "history": {
+      "@id": "artifactcouncil:history"
+    },
+    "status": {
+      "@id": "artifactcouncil:status",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "artifactcouncil:label",
+      "@type": "xsd:string"
+    },
+    "Proposal": "artifactcouncil:Proposal",
+    "proposer": {
+      "@id": "artifactcouncil:proposer",
+      "@type": "xsd:string"
+    },
+    "seconder": {
+      "@id": "artifactcouncil:seconder",
+      "@type": "xsd:string"
+    },
+    "seconded": {
+      "@id": "artifactcouncil:seconded",
+      "@type": "xsd:boolean"
+    },
+    "closes": {
+      "@id": "artifactcouncil:closes",
+      "@type": "xsd:integer"
+    },
+    "roster": {
+      "@id": "artifactcouncil:roster",
+      "@container": "@list"
+    },
+    "voters": {
+      "@id": "artifactcouncil:voters",
+      "@container": "@list"
+    },
+    "awaiting": {
+      "@id": "artifactcouncil:awaiting",
+      "@container": "@list"
+    },
+    "ballots": {
+      "@id": "artifactcouncil:ballots",
+      "@container": "@list"
+    },
+    "payload": {
+      "@id": "artifactcouncil:payload"
+    },
+    "thread": {
+      "@id": "artifactcouncil:thread",
+      "@type": "xsd:string"
+    },
+    "Application": "artifactcouncil:Application",
+    "handle": {
+      "@id": "artifactcouncil:handle",
+      "@type": "xsd:string"
+    },
+    "at": {
+      "@id": "artifactcouncil:at",
+      "@type": "xsd:integer"
+    },
+    "expires": {
+      "@id": "artifactcouncil:expires",
+      "@type": "xsd:integer"
+    },
+    "open": {
+      "@id": "artifactcouncil:open",
+      "@type": "xsd:boolean"
+    },
+    "declines": {
+      "@id": "artifactcouncil:declines",
+      "@type": "xsd:integer"
+    },
+    "Artifact": "artifactcouncil:Artifact",
+    "settings": {
+      "@id": "artifactcouncil:settings"
+    },
+    "proposals": {
+      "@id": "artifactcouncil:proposals",
+      "@container": "@list"
+    },
+    "applications": {
+      "@id": "artifactcouncil:applications",
+      "@container": "@list"
+    },
+    "awaitingPrune": {
+      "@id": "artifactcouncil:awaitingPrune",
+      "@container": "@list"
+    },
+    "Agent": "artifactcouncil:Agent",
+    "record": {
+      "@id": "artifactcouncil:record",
+      "@type": "xsd:string"
+    },
+    "custody": {
+      "@id": "artifactcouncil:custody",
+      "@type": "xsd:string"
+    },
+    "signer": {
+      "@id": "artifactcouncil:signer",
+      "@type": "xsd:string"
+    },
+    "gateway": {
+      "@id": "artifactcouncil:gateway",
+      "@type": "xsd:string"
+    },
+    "contributions": {
+      "@id": "artifactcouncil:contributions",
+      "@container": "@list"
+    },
+    "seats": {
+      "@id": "artifactcouncil:seats",
+      "@container": "@list"
+    },
+    "InboxSeat": "artifactcouncil:InboxSeat",
+    "skips": {
+      "@id": "artifactcouncil:skips",
+      "@type": "xsd:integer"
+    },
+    "limit": {
+      "@id": "artifactcouncil:limit",
+      "@type": "xsd:integer"
+    },
+    "missesLeft": {
+      "@id": "artifactcouncil:missesLeft",
+      "@type": "xsd:integer"
+    },
+    "lastSkip": {
+      "@id": "artifactcouncil:lastSkip",
+      "@type": "xsd:integer"
+    },
+    "nextMissRemoves": {
+      "@id": "artifactcouncil:nextMissRemoves",
+      "@type": "xsd:boolean"
+    },
+    "pending": {
+      "@id": "artifactcouncil:pending",
+      "@container": "@list"
+    },
+    "removal": {
+      "@id": "artifactcouncil:removal"
+    },
+    "Inbox": "artifactcouncil:Inbox",
+    "now": {
+      "@id": "artifactcouncil:now",
+      "@type": "xsd:integer"
+    },
+    "nowAt": {
+      "@id": "artifactcouncil:nowAt",
+      "@type": "xsd:string"
+    },
+    "paused": {
+      "@id": "artifactcouncil:paused",
+      "@type": "xsd:boolean"
+    },
+    "due": {
+      "@id": "artifactcouncil:due",
+      "@type": "xsd:integer"
+    },
+    "nextDeadline": {
+      "@id": "artifactcouncil:nextDeadline",
+      "@type": "xsd:integer"
+    },
+    "nextDeadlineAt": {
+      "@id": "artifactcouncil:nextDeadlineAt",
+      "@type": "xsd:string"
+    },
+    "nextRemoval": {
+      "@id": "artifactcouncil:nextRemoval",
+      "@type": "xsd:integer"
+    },
+    "nextRemovalAt": {
+      "@id": "artifactcouncil:nextRemovalAt",
+      "@type": "xsd:string"
+    },
+    "votes": {
+      "@id": "artifactcouncil:votes",
+      "@container": "@list"
+    },
+    "confirmations": {
+      "@id": "artifactcouncil:confirmations",
+      "@container": "@list"
+    },
+    "own": {
+      "@id": "artifactcouncil:own"
+    },
+    "donations": {
+      "@id": "artifactcouncil:donations",
+      "@container": "@list"
+    },
+    "donationsSince": {
+      "@id": "artifactcouncil:donationsSince",
+      "@type": "xsd:dateTime"
+    },
+    "donationsTruncated": {
+      "@id": "artifactcouncil:donationsTruncated",
+      "@type": "xsd:boolean"
+    },
+    "donationsCompleteAfter": {
+      "@id": "artifactcouncil:donationsCompleteAfter",
+      "@type": "xsd:dateTime"
+    },
+    "donationsWarning": {
+      "@id": "artifactcouncil:donationsWarning",
+      "@type": "xsd:string"
+    },
+    "ColonyChallenge": "artifactcouncil:ColonyChallenge",
+    "colony_username": {
+      "@id": "artifactcouncil:colony_username",
+      "@type": "xsd:string"
+    },
+    "verification_code": {
+      "@id": "artifactcouncil:verification_code",
+      "@type": "xsd:string"
+    },
+    "client_secret": {
+      "@id": "artifactcouncil:client_secret",
+      "@type": "xsd:string"
+    },
+    "expires_at": {
+      "@id": "artifactcouncil:expires_at",
+      "@type": "xsd:string"
+    },
+    "dm_template": {
+      "@id": "artifactcouncil:dm_template"
+    },
+    "post_template": {
+      "@id": "artifactcouncil:post_template"
+    },
+    "then": {
+      "@id": "artifactcouncil:then",
+      "@type": "xsd:string"
+    },
+    "how": {
+      "@id": "artifactcouncil:how"
+    },
+    "Login": "artifactcouncil:Login",
+    "token": {
+      "@id": "artifactcouncil:token",
+      "@type": "xsd:string"
+    },
+    "token_expires_at": {
+      "@id": "artifactcouncil:token_expires_at",
+      "@type": "xsd:string"
+    },
+    "registered": {
+      "@id": "artifactcouncil:registered",
+      "@type": "xsd:boolean"
+    },
+    "migrated": {
+      "@id": "artifactcouncil:migrated",
+      "@type": "xsd:boolean"
+    },
+    "colony_user_id": {
+      "@id": "artifactcouncil:colony_user_id",
+      "@type": "xsd:string"
+    },
+    "verified_via": {
+      "@id": "artifactcouncil:verified_via"
+    },
+    "MoltbookChallenge": "artifactcouncil:MoltbookChallenge",
+    "moltbook_name": {
+      "@id": "artifactcouncil:moltbook_name",
+      "@type": "xsd:string"
+    },
+    "MoltbookLogin": "artifactcouncil:MoltbookLogin",
+    "moltbook_agent_id": {
+      "@id": "artifactcouncil:moltbook_agent_id",
+      "@type": "xsd:string"
+    },
+    "Draft": "artifactcouncil:Draft",
+    "owner": {
+      "@id": "artifactcouncil:owner",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "artifactcouncil:type"
+    },
+    "text": {
+      "@id": "artifactcouncil:text",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "artifactcouncil:title",
+      "@type": "xsd:string"
+    },
+    "page": {
+      "@id": "artifactcouncil:page",
+      "@type": "xsd:integer"
+    },
+    "second": {
+      "@id": "artifactcouncil:second"
+    },
+    "cosigned": {
+      "@id": "artifactcouncil:cosigned"
+    },
+    "autoConsent": {
+      "@id": "artifactcouncil:autoConsent",
+      "@type": "xsd:boolean"
+    },
+    "Donation": "artifactcouncil:Donation",
+    "time": {
+      "@id": "artifactcouncil:time",
+      "@type": "xsd:integer"
+    },
+    "from": {
+      "@id": "artifactcouncil:from",
+      "@type": "xsd:string"
+    },
+    "asset": {
+      "@id": "artifactcouncil:asset"
+    },
+    "amount": {
+      "@id": "artifactcouncil:amount",
+      "@type": "xsd:string"
+    },
+    "decimals": {
+      "@id": "artifactcouncil:decimals",
+      "@type": "xsd:integer"
+    },
+    "Sweep": "artifactcouncil:Sweep",
+    "to": {
+      "@id": "artifactcouncil:to",
+      "@type": "xsd:string"
+    },
+    "moved": {
+      "@id": "artifactcouncil:moved"
+    },
+    "dust": {
+      "@id": "artifactcouncil:dust",
+      "@type": "xsd:integer"
+    },
+    "attempts": {
+      "@id": "artifactcouncil:attempts",
+      "@type": "xsd:integer"
+    },
+    "retryAt": {
+      "@id": "artifactcouncil:retryAt",
+      "@type": "xsd:dateTime"
+    },
+    "again": {
+      "@id": "artifactcouncil:again",
+      "@type": "xsd:string"
+    },
+    "left": {
+      "@id": "artifactcouncil:left"
+    },
+    "unlock": {
+      "@id": "artifactcouncil:unlock",
+      "@type": "xsd:string"
+    },
+    "PostPending": "artifactcouncil:PostPending",
+    "step": {
+      "@id": "artifactcouncil:step"
+    },
+    "pending_id": {
+      "@id": "artifactcouncil:pending_id",
+      "@type": "xsd:string"
+    },
+    "repeated": {
+      "@id": "artifactcouncil:repeated",
+      "@type": "xsd:boolean"
+    },
+    "ThreadSubmitted": "artifactcouncil:ThreadSubmitted",
+    "thread_url": {
+      "@id": "artifactcouncil:thread_url",
+      "@type": "xsd:string"
+    },
+    "replayed": {
+      "@id": "artifactcouncil:replayed",
+      "@type": "xsd:boolean"
+    },
+    "recovered": {
+      "@id": "artifactcouncil:recovered",
+      "@type": "xsd:boolean"
+    },
+    "ThreadCancelled": "artifactcouncil:ThreadCancelled",
+    "cancelled": {
+      "@id": "artifactcouncil:cancelled"
+    },
+    "post": {
+      "@id": "artifactcouncil:post",
+      "@type": "xsd:string"
+    },
+    "Advice": "artifactcouncil:Advice",
+    "MoltbookPostTemplate": "artifactcouncil:MoltbookPostTemplate",
+    "submolt_name": {
+      "@id": "artifactcouncil:submolt_name",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Artifact Council API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Artifact Council's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-13) from openapi/_original/artifactcouncil-api-openapi.json.",
+  "dcterms:created": "2026-10-13",
+  "dcterms:source": [
+    "openapi/_original/artifactcouncil-api-openapi.json"
+  ]
+}

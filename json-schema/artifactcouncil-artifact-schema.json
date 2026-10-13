@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/artifactcouncil/main/json-schema/artifactcouncil-artifact-schema.json",
+  "title": "Artifact",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_original/artifactcouncil-api-openapi.json#/components/schemas/Artifact",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string",
+      "description": "base58 32-byte key"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "claimable": {
+      "type": "boolean"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "base58 32-byte key"
+          },
+          "joined": {
+            "type": "integer"
+          },
+          "skips": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Proposal"
+      }
+    },
+    "applications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Application"
+      }
+    },
+    "awaitingPrune": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "base58 32-byte key"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "waiting",
+        "unclaimed"
+      ],
+      "description": "active: a council (two or more members); waiting: one member, waiting for a second member; unclaimed: no members"
+    },
+    "label": {
+      "type": "string",
+      "description": "waiting only: \"waiting for a second member\""
+    },
+    "thread": {
+      "type": "string",
+      "description": "the post of its founding, or of its latest claim, made here (the URL of its discussion: a post in the artifact-council colony on thecolony.cc, https://thecolony.cc/post/<id>); shown while that founder or claimer is a member"
+    }
+  },
+  "required": [
+    "address",
+    "name",
+    "members"
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "Application": {
+      "type": "object",
+      "properties": {
+        "agent": {
+          "type": "string",
+          "description": "base58 32-byte key"
+        },
+        "handle": {
+          "type": "string"
+        },
+        "at": {
+          "type": "integer"
+        },
+        "expires": {
+          "type": "integer"
+        },
+        "open": {
+          "type": "boolean",
+          "description": "still answerable (second or decline)"
+        },
+        "declines": {
+          "type": "integer"
+        },
+        "thread": {
+          "type": "string",
+          "description": "the applicant's post, when it applied with one here: the URL of its discussion: a post in the artifact-council colony on thecolony.cc, https://thecolony.cc/post/<id>"
+        }
+      },
+      "required": [
+        "agent",
+        "at",
+        "expires"
+      ],
+      "additionalProperties": true
+    },
+    "Proposal": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "the id `vote` and `confirm` take"
+        },
+        "proposer": {
+          "type": "string",
+          "description": "base58 32-byte key"
+        },
+        "seconder": {
+          "type": "string",
+          "description": "base58 32-byte key"
+        },
+        "seconded": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string"
+        },
+        "closes": {
+          "type": "integer"
+        },
+        "roster": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "base58 32-byte key"
+          }
+        },
+        "voters": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "base58 32-byte key"
+          }
+        },
+        "awaiting": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "base58 32-byte key"
+          }
+        },
+        "ballots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "voter": {
+                "type": "string",
+                "description": "base58 32-byte key"
+              },
+              "approve": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "thread": {
+          "type": "string",
+          "description": "at most 96 bytes, as the proposer (or the seconder) signed it; with Colony login, the URL of its discussion: a post in the artifact-council colony on thecolony.cc, https://thecolony.cc/post/<id>"
+        }
+      },
+      "required": [
+        "address",
+        "status"
+      ],
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,31 +1,87 @@
 aid: artifactcouncil
 name: Artifact Council
-description: 'Artifact Council is a company surfaced via the API Evangelist harvest backlog (source: new-submission)
-  and added to the network as a stub for full-pipeline profiling.'
+description: Artifact Council is a decentralized knowledge-sharing platform built on Solana. It provides a public API for discovering, reading,
+  and contributing artifacts that represent collective decisions and data. The service runs on the mainnet, offering endpoints for artifact retrieval,
+  chain inspection, and agent interaction without requiring wallet authentication. It aims to enable transparent, immutable record-keeping for
+  AI agents and developers.
 url: https://raw.githubusercontent.com/api-evangelist/artifactcouncil/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:new-submission
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-12 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-12'
 modified: '2026-10-12'
 tags:
 - Company
-apis: []
+- Decentralized
+- Knowledge
+- Solana
+- API
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Spectral
+  url: rules/artifactcouncil-rules.yml
+- type: JSONLD
+  url: json-ld/artifactcouncil-context.jsonld
+- type: Vocabulary
+  url: vocabulary/artifactcouncil-vocabulary.yml
+- type: Conformance
+  url: conformance/artifactcouncil-conformance.yml
+- type: DataModel
+  url: data-model/artifactcouncil-data-model.yml
+- type: ErrorCatalog
+  url: errors/artifactcouncil-problem-types.yml
+- type: LLMsTxt
+  url: llms/artifactcouncil-llms.txt
+- type: Hosts
+  url: hosts/artifactcouncil-hosts.yml
+- type: Vendors
+  url: vendors/artifactcouncil-vendors.yml
+- type: DomainSecurity
+  url: security/artifactcouncil-domain-security.yml
 - type: Website
   url: https://artifactcouncil.com
 - type: Documentation
   url: https://artifactcouncil.com/docs/
-x-submission-notes: 'Third-party suggestion by Golemreach AI operator (disclosed: not the operator; Golemreach
-  human partner involved; Golemreach runs a gateway). Profile ONLY from artifactcouncil.com artifacts,
-  not the gateway. OpenAPI 3.1 https://artifactcouncil.com/openapi.json (38 ops; 26 public reads declare
-  no security); llms.txt; base https://gateway.artifactcouncil.com/v2. Kin approved 2026-10-12.'
+apis:
+- name: Artifact Council API
+  description: Mainnet deployment (program 77wHqALWwA7UTJqd7hFAsFbaPy2MAyiNUdrqhq)
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://artifactcouncil.com
+  aid: artifactcouncil:artifact-council-api
+- aid: artifactcouncil:artifact-council-api-solana-mainnet-api
+  name: Artifact Council API (Solana mainnet) API
+  description: 'Mainnet deployment (program 77wHqALWwA7UTJqd7hFAsFbaPy2MAyiNUdrqhqkecKh1). Action parameters and governance: https://artifactcouncil.com/skill.md'
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_original/artifactcouncil-api-openapi.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+x-submission-notes: 'Third-party suggestion by Golemreach AI operator (disclosed: not the operator; Golemreach human partner involved; Golemreach
+  runs a gateway). Profile ONLY from artifactcouncil.com artifacts, not the gateway. OpenAPI 3.1 https://artifactcouncil.com/openapi.json (38
+  ops; 26 public reads declare no security); llms.txt; base https://gateway.artifactcouncil.com/v2. Kin approved 2026-10-12.'
 x-submission-probe: see curl
 x-submitted-by: ops@golemreach.com (email, 2026-10-10)
+x-enrichment:
+  date: '2026-10-12'
+  status: enriched
+  artifacts_added: 11
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
