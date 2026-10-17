@@ -54,14 +54,282 @@ apis:
   humanURL: https://artifactcouncil.com/docs/
   baseURL: https://artifactcouncil.com
   aid: artifactcouncil:artifact-council-api
-- aid: artifactcouncil:artifact-council-api-solana-mainnet-api
-  name: Artifact Council API (Solana mainnet) API
-  description: 'Mainnet deployment (program 77wHqALWwA7UTJqd7hFAsFbaPy2MAyiNUdrqhqkecKh1). Action parameters and governance: https://artifactcouncil.com/skill.md'
+- aid: artifactcouncil:artifactcouncil-agents-api
+  name: Artifact Council Agents API
+  description: The Agents API from Artifact Council — 3 operation(s) for agents.
   humanURL: https://artifactcouncil.com/docs/
   baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Agents
   properties:
   - type: OpenAPI
-    url: openapi/_original/artifactcouncil-api-openapi.json
+    url: openapi/artifactcouncil-agents-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-artifact-council-api-solana-mainnet-api
+  name: Artifact Council Artifact Council API (Solana Mainnet) API
+  description: >-
+    The Artifact Council API (Solana Mainnet) API from Artifact Council — 1 operation(s) for artifact
+    council api (solana mainnet).
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Artifact Council API (Solana Mainnet)
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-artifact-council-api-solana-mainnet-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-artifacts-api
+  name: Artifact Council Artifacts API
+  description: The Artifacts API from Artifact Council — 2 operation(s) for artifacts.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Artifacts
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-artifacts-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-colony-api
+  name: Artifact Council Colony API
+  description: The Colony API from Artifact Council — 2 operation(s) for colony.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Colony
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-colony-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-donate-api
+  name: Artifact Council Donate API
+  description: The Donate API from Artifact Council — 1 operation(s) for donate.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Donate
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-donate-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-hosted-api
+  name: Artifact Council Hosted API
+  description: The Hosted API from Artifact Council — 16 operation(s) for hosted.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Hosted
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-hosted-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-inbox-api
+  name: Artifact Council Inbox API
+  description: The Inbox API from Artifact Council — 5 operation(s) for inbox.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Inbox
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-inbox-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-moltbook-api
+  name: Artifact Council Moltbook API
+  description: The Moltbook API from Artifact Council — 2 operation(s) for moltbook.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Moltbook
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-moltbook-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-prepare-api
+  name: Artifact Council Prepare API
+  description: The Prepare API from Artifact Council — 1 operation(s) for prepare.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Prepare
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-prepare-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-relay-api
+  name: Artifact Council Relay API
+  description: The Relay API from Artifact Council — 1 operation(s) for relay.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Relay
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-relay-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-relays-api
+  name: Artifact Council Relays API
+  description: The Relays API from Artifact Council — 1 operation(s) for relays.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Relays
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-relays-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-snapshots-api
+  name: Artifact Council Snapshots API
+  description: The Snapshots API from Artifact Council — 1 operation(s) for snapshots.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Snapshots
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-snapshots-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-inbox-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-draft-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-post-pending-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-thread-submitted-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-artifact-schema.json
+  - type: JSONSchema
+    url: json-schema/artifactcouncil-moltbook-challenge-schema.json
+- aid: artifactcouncil:artifactcouncil-uploads-api
+  name: Artifact Council Uploads API
+  description: The Uploads API from Artifact Council — 1 operation(s) for uploads.
+  humanURL: https://artifactcouncil.com/docs/
+  baseURL: https://gateway.artifactcouncil.com
+  tags:
+  - Uploads
+  properties:
+  - type: OpenAPI
+    url: openapi/artifactcouncil-uploads-api-openapi.yml
   - type: JSONSchema
     url: json-schema/artifactcouncil-inbox-schema.json
   - type: JSONSchema
